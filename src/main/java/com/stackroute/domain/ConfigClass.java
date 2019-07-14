@@ -5,29 +5,24 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
-
-    @Configuration
-    public class ConfigClass {
+@Configuration
+public class ConfigClass {
 
 //	Movie Beans
 
-        @Bean
-        public Movie movie (){
-            return new Movie(actor());
-        }
+    @Bean
+    public Movie movieObj (){
+        return new Movie(actorObj());
+    }
 
-        @Bean
-        public Movie movie1 (){
-            return new Movie(actor());
-        }
+    @Bean
+    public Actor actorObj (){
+        return new Actor("Neelanshi","female",23);
+    }
 
-        @Bean
-        public Actor actor (){
-            return new Actor("Neelanshi","female",23);
-        }
+    @Bean(initMethod = "customInit", destroyMethod = "customDestroy")
+    public BeanLifecycleDemoBean beanLifeCycle() {
+        return new BeanLifecycleDemoBean();
+    }
 
-        @Bean
-        public Actor actor1 (){
-            return new Actor("Rohit","male",27);
-        }
 }

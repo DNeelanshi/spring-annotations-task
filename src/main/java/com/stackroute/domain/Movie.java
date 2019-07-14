@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNameAware {
+public class Movie {
 
     private Actor actorObj;
 
@@ -19,24 +19,16 @@ public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
         this.actorObj = actorObj;
     }
 
+    public Actor getActorObj() {
+        return actorObj;
+    }
+
+    public void setActorObj(Actor actorObj) {
+        this.actorObj = actorObj;
+    }
+
     public void display()
     {
         System.out.println("Actor Name: "+ actorObj.getName()+" Gender: "+ actorObj.getGender()+" Age: "+ actorObj.getAge() );
     }
-
-    @Override
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        System.out.println("SetBeanFactory method");
-    }
-
-    @Override
-    public void setBeanName(String s) {
-        System.out.println("SetBeanName method");
-    }
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        System.out.println("SetApplicationContext method");
-    }
-
 }
