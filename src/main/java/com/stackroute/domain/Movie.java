@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
+
 public class Movie {
 
     private Actor actorObj;
@@ -27,8 +28,7 @@ public class Movie {
         this.actorObj = actorObj;
     }
 
-    public void display()
-    {
-        System.out.println("Actor Name: "+ actorObj.getName()+" Gender: "+ actorObj.getGender()+" Age: "+ actorObj.getAge() );
+    public void display() {
+        System.out.println("Actor Name: " + actorObj.getName() + " Gender: " + actorObj.getGender() + " Age: " + actorObj.getAge());
     }
 }
