@@ -5,42 +5,24 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
-@Configuration
-public class ConfigClass {
 
-    //	Movie Beans
-    @Bean(name = {"movieBean1", "movieBean2"})
-    public Movie movieBean1 (){
-        Movie movie = new Movie(actor1());
-        return movie;
-    }
+    @Configuration
+    public class ConfigClass {
 
-    @Bean
-    public Movie movieBean2 (){
-        Movie movie = new Movie(actor2());
-        return movie;
-    }
+//	Movie Beans
 
-    @Bean
-    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    public Movie movieBean3 (){
-        Movie movie = new Movie(actor3());
-        return movie;
-    }
+        @Bean
+        public Movie movie (){
+            return new Movie();
+        }
 
-    //	Actor Beans
-    @Bean
-    public Actor actor1 (){
-        return new Actor("neelanshi","female",23);
-    }
+        @Bean
+        public Actor actor (){
+            return new Actor("Neelanshi","female",23);
+        }
 
-    @Bean
-    public Actor actor2 (){
-        return new Actor("rohit","male",26);
-    }
-
-    @Bean
-    public Actor actor3 (){
-        return new Actor("amit","male",30);
-    }
+        @Bean
+        public Actor actor1 (){
+            return new Actor("Rohit","male",26);
+        }
 }
