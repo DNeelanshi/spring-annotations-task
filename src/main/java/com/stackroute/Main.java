@@ -15,5 +15,7 @@ public class Main {
         Movie movie = context.getBean("movie",Movie.class);
         movie.display();
 
+        Movie movie1 = context.getBean("movie1",Movie.class);
+        movie1.display();
     }
 }

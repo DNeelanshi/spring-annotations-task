@@ -13,7 +13,12 @@ import org.springframework.context.annotation.Scope;
 
         @Bean
         public Movie movie (){
-            return new Movie();
+            return new Movie(actor());
+        }
+
+        @Bean
+        public Movie movie1 (){
+            return new Movie(actor());
         }
 
         @Bean
@@ -23,6 +28,6 @@ import org.springframework.context.annotation.Scope;
 
         @Bean
         public Actor actor1 (){
-            return new Actor("Rohit","male",26);
+            return new Actor("Rohit","male",27);
         }
 }
