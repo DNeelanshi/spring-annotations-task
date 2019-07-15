@@ -13,9 +13,11 @@ public class Main {
     public static void main( String[] args )
     {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.stackroute.domain");
+        ((AnnotationConfigApplicationContext) context).registerShutdownHook();
 
         Movie movie = context.getBean("movieObj",Movie.class);
         movie.display();
         BeanPostProcessorDemoBean beanPostProcessorDemoBean =  (BeanPostProcessorDemoBean) context.getBean("beanPostProcessorDemo");
+        BeanLifecycleDemoBean beanLifecycleDemoBean = (BeanLifecycleDemoBean)context.getBean("beanLifecycleDemoBean");
     }
 }

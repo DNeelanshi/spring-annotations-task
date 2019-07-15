@@ -26,4 +26,9 @@ import org.springframework.context.annotation.Scope;
             return new BeanPostProcessorDemoBean();
         }
 
+        @Bean (initMethod = "initialize", destroyMethod="clean")
+        public BeanLifecycleDemoBean beanLifecycleDemoBean(){
+            return new BeanLifecycleDemoBean();
+        }
+
 }
