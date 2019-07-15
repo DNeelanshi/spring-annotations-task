@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Scope;
 
         @Bean
         public Actor actorObj (){
-            return new Actor("Neelanshi","female",23);
+            return new Actor("neelanshi","female",30);
         }
 
         @Bean
