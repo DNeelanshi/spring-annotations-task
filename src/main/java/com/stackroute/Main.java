@@ -13,7 +13,7 @@ public class Main {
     public static void main( String[] args )
     {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.stackroute.domain");
-        ((AnnotationConfigApplicationContext) context).registerShutdownHook();
+        ((AnnotationConfigApplicationContext) context).registerShutdownHook(); //using shutdown hook to kill the object so that destroy method will be called
 
         Movie movie = context.getBean("movieObj",Movie.class);
         movie.display();
