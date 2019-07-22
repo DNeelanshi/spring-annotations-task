@@ -12,6 +12,7 @@ public class Main {
         {
             ApplicationContext context = new AnnotationConfigApplicationContext("com.stackroute.domain");
 
+                //calling different beans for movie class
             Movie movie1 = context.getBean("movieBean1",Movie.class);
             movie1.display();
 
@@ -23,8 +24,10 @@ public class Main {
 
             Movie movie4 = context.getBean("movieBean3",Movie.class);
 
+                //matching if they are true or not
             System.out.println(movie3 == movie4);
 
+                
             Movie movie5 = (Movie) context.getBean("movieBean1");
             movie5.display();
 
