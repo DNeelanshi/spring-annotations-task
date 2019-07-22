@@ -26,6 +26,7 @@ import org.springframework.context.annotation.Scope;
             return new BeanPostProcessorDemoBean();
         }
 
+        //lifecycle demo with custom init and destroy methods
         @Bean (initMethod = "initialize", destroyMethod="clean")
         public BeanLifecycleDemoBean beanLifecycleDemoBean(){
             return new BeanLifecycleDemoBean();
