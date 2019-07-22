@@ -10,7 +10,9 @@ public class Main {
 
         public static void main( String[] args )
         {
+                //using annotationconfig for annotation based project
             ApplicationContext context = new AnnotationConfigApplicationContext("com.stackroute.domain");
+                //calling bean using context.
             Movie movie1 = context.getBean("movieBean",Movie.class);
             movie1.display();
 
