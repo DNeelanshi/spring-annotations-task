@@ -21,6 +21,7 @@ public class ConfigClass {
         return movie;
     }
 
+    // marking bean with scope prototype so that every time new instance will be created.
     @Bean
     @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     public Movie movieBean3 (){
